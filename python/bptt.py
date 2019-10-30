@@ -43,6 +43,8 @@ inlist = [spikes1, spikes2]
 Vs = np.zeros([H,T_STEPS+1])
 y = np.zeros([Q, T_STEPS+1])
 
+# Forward Simulation!
+
 for t in range(T_STEPS):
     # Decay Potential
     Vs[:,t+1] = alpha * Vs[:,t]
@@ -60,5 +62,9 @@ for t in range(T_STEPS):
 
     # Record network output
     y[:,t+1] = np.sum(THETA_out[:,spikes[t]]) + kappa * y[:,t]
+
+# Get a gradient!
+for t in range()
+
 
 print(max([len(x) for x in spikes]))
