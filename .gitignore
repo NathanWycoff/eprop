@@ -1,0 +1,4 @@
+*.pdf
+#Vim temp files
+*.swp
+*.swo

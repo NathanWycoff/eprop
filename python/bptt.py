@@ -64,7 +64,13 @@ for t in range(T_STEPS):
     y[:,t+1] = np.sum(THETA_out[:,spikes[t]]) + kappa * y[:,t]
 
 # Get a gradient!
-for t in range()
+    # For now, naively do it for every neuron.
+for h1 in range(H):
+    for h2 in range(H):
+        dtheta = 0
+        for t in range(T_STEPS, 0, -1):
+
+
 
 
 print(max([len(x) for x in spikes]))
