@@ -1,0 +1,5 @@
+Implement an SNN sim in tensorflow (done). This will allow us to:
+1) Implement BPTT to optimize an SNN (done)
+2) Implement Eprop2
+3) Assess the "few shot" capabilities of eprop2: it works well for one-shot optim, but what if the machine has multiple "shots"? Does it eventually do worse than eprop1? Is there a "harmless" way to combine the two?
+4)? Test for the effectiveness of a Hessian based optimization method, which could lead into a local Hessian-based optimization method, analogous to eprop1.
