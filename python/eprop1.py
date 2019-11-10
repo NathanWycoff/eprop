@@ -19,7 +19,7 @@ T_END = T_EPS * T_STEPS
 THRESH = 1.0
 ETA = 0.3 # Called gamma in the article
 LEARN_RATE = 1e-6
-EPOCHS = 1000
+EPOCHS = 100
 
 #TODO: Alpha should depend on T_EPS
 alpha = np.exp(-T_EPS)
@@ -97,11 +97,8 @@ for epoch in tqdm(range(EPOCHS)):
         #TODO: Assumes Q = 1
         delta = y[:,t+1] - target[t]
         cost += np.square(delta)
-        for h1 in range(H):
-            for h2 in range(H):
-                if h1 != h2:
-                    dedz = delta * THETA_out_rand[0,h1]
-                    GRADS_rec[h1,h2] += dedz * h[h1] * zhat[h2,t]
+        Ls = delta * THETA_out_rand[0,:]
+        GRADS_rec += np.outer(Ls * h, zhat[:,t])
 
         # ...For output read weights
         #TODO: Is this definitely t and not t-1 in a few lines?
